@@ -235,11 +235,11 @@ a:hover {
   background-color: #ffffff;
 }
 
-/* Real photo: remove bg via CSS – white circle background, top-crop */
-.avatar-real {
-  background-color: #ffffff;
-  mix-blend-mode: multiply;
-  filter: contrast(1.05) brightness(1.02);
+/* Canvas-rendered real photo (bg removed via pixel manipulation) */
+.avatar-canvas {
+  border-radius: 50%;
+  background: transparent;
+  box-shadow: 0 10px 30px rgba(117, 16, 247, 0.15);
 }
 
 .avatar-img:hover {
@@ -882,10 +882,10 @@ a:hover {
   background-color: #ffffff;
 }
 
-/* Apply white-bg bg-removal effect for real photo */
-.spotlight-real {
-  mix-blend-mode: multiply;
-  filter: contrast(1.05) brightness(1.02);
+/* Canvas-rendered spotlight photo (transparent bg) */
+.spotlight-canvas {
+  border-radius: 50%;
+  background: transparent;
 }
 
 
