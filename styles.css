@@ -228,14 +228,49 @@ a:hover {
   height: 210px;
   border-radius: 50%;
   object-fit: cover;
+  object-position: top center;
   border: 4px solid #ffffff;
   box-shadow: 0 10px 30px rgba(117, 16, 247, 0.15);
   transition: var(--transition);
+  background-color: #ffffff;
+}
+
+/* Real photo: remove bg via CSS – white circle background, top-crop */
+.avatar-real {
+  background-color: #ffffff;
+  mix-blend-mode: multiply;
+  filter: contrast(1.05) brightness(1.02);
 }
 
 .avatar-img:hover {
   transform: scale(1.03);
 }
+
+/* Hero action buttons row */
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 3.5rem;
+}
+
+/* Download Resume button pulse glow */
+.button-primary {
+  animation: downloadPulse 3s ease-in-out infinite;
+}
+
+@keyframes downloadPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(117, 16, 247, 0); }
+  50% { box-shadow: 0 0 0 8px rgba(117, 16, 247, 0.15); }
+}
+
+.button-primary:hover {
+  animation: none;
+  box-shadow: 0 8px 20px rgba(117, 16, 247, 0.3);
+  transform: translateY(-2px);
+}
+
 
 .hero-devices {
   max-width: 950px;
@@ -836,6 +871,7 @@ a:hover {
   height: 100%;
   border-radius: 50%;
   object-fit: cover;
+  object-position: top center;
   border: 4px solid #ffffff;
   box-shadow: 0 12px 35px rgba(117, 16, 247, 0.3);
   position: relative;
@@ -843,7 +879,15 @@ a:hover {
   transform: scale(0.5) rotate(-10deg);
   opacity: 0;
   transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.15s;
+  background-color: #ffffff;
 }
+
+/* Apply white-bg bg-removal effect for real photo */
+.spotlight-real {
+  mix-blend-mode: multiply;
+  filter: contrast(1.05) brightness(1.02);
+}
+
 
 .spotlight-backdrop.active .spotlight-photo {
   transform: scale(1) rotate(0deg);
